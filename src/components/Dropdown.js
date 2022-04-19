@@ -1,7 +1,20 @@
-import React, {useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 
 const Dropdown =  ( {options, selected, onSelectedChanged}) => {
     const [active, setActive] = useState(false);
+    const ref = useRef();
+
+    useEffect(() => {
+        document.body.addEventListener(
+            "click",
+            (event) => {
+                if(!ref.current.contains(event.target)){
+                    setActive(false);
+                }
+            },
+            { capture: true }
+        );
+    }, []);
 
     const values = options.map(( option) => {
         if(option.value === selected.value){
@@ -10,7 +23,7 @@ const Dropdown =  ( {options, selected, onSelectedChanged}) => {
         return <div key={option.value} className="item" onClick={() => {onSelectedChanged(option)}}>{option.label}</div>
     });
     return (
-        <div className="ui form">
+        <div className="ui form" ref={ref}>
             <div className="field">
                 <label className="label">Select a color</label>
                 <div
