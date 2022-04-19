@@ -21,7 +21,7 @@ const Dropdown =  ( {options, selected, onSelectedChanged}) => {
                     <div className="text">
                         {selected.label}
                     </div>
-                    <div className={`menu transition${active ? ' visible' : ''}`}>
+                    <div className={`menu ${active ? ' transition visible' : ''}`}>
                         {values}
                     </div>
                 </div>
