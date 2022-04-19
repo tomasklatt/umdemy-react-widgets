@@ -17,13 +17,8 @@ const Search = () => {
                 }
             });
             setResults(data.query.search);
-            console.log(results);
         };
-        if(term){
-            search();
-        } else {
-            setResults([]);
-        }
+        term ? search() : setResults([]);
     }, [term])
 
     const renderedResults = results.map(result => {
