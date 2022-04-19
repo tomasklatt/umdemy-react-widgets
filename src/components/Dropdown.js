@@ -1,8 +1,8 @@
 import React from "react";
 
-const Dropdown =  ( {options}) => {
-    const values = options.map(( {label, value}) => {
-        return <div key={value} className="item">{label}</div>
+const Dropdown =  ( {options, selected, onSelectedChanged}) => {
+    const values = options.map(( option) => {
+        return <div key={option.value} className="item" onClick={() => {onSelectedChanged(option)}}>{option.label}</div>
     });
     return (
         <div className="ui form">
@@ -11,7 +11,7 @@ const Dropdown =  ( {options}) => {
                 <div className="ui selection dropdown visible active">
                     <i className="dropdown icon"></i>
                     <div className="text">
-                        Select Color
+                        {selected.label}
                     </div>
                     <div className="menu visible transition">
                         {values}
