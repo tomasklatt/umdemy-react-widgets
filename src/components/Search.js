@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import axios, {Axios} from "axios";
+import axios from "axios";
 
 const Search = () => {
     const [term, setTerm] = useState('');
