@@ -26,7 +26,12 @@ const Translate =  () => {
 
     return (
         <div>
-            <input onChange={(e) => setText(e.target.value)} value={text}></input>
+            <div className="ui form">
+                <div className="field">
+                    <label className="label">Enter text</label>
+                    <input onChange={(e) => setText(e.target.value)} value={text}></input>
+                </div>
+            </div>
             <Dropdown options={languages} selected={selected} objectOfSelecting={'language'} onSelectedChanged={setSelected}/>
         </div>
     );
