@@ -34,31 +34,12 @@ const colors = [
     },
 ];
 
-const languages = [
-    {
-        label: 'Afrikaans',
-        value: 'af'
-    },
-    {
-        label: 'Arabic',
-        value: 'ar'
-    },
-    {
-        label: 'Hindi',
-        value: 'hi'
-    },
-    {
-        label: 'Czech',
-        value: 'cs'
-    },
-];
-
 const App = () => {
     const [selected, setSelected] = useState(colors[0]);
 
     return (
         <div>
-            <Translate languages={languages}/>
+            <Translate/>
         </div>
     );
 }

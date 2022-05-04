@@ -1,7 +1,26 @@
 import React, {useState} from "react";
 import Dropdown from "./Dropdown";
 
-const Translate =  ({ languages }) => {
+const languages = [
+    {
+        label: 'Afrikaans',
+        value: 'af'
+    },
+    {
+        label: 'Arabic',
+        value: 'ar'
+    },
+    {
+        label: 'Hindi',
+        value: 'hi'
+    },
+    {
+        label: 'Czech',
+        value: 'cs'
+    },
+];
+
+const Translate =  () => {
     const [selected, setSelected] = useState(languages[0]);
 
     return (
