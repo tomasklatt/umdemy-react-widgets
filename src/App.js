@@ -47,6 +47,10 @@ const languages = [
         label: 'Hindi',
         value: 'hi'
     },
+    {
+        label: 'Czech',
+        value: 'cs'
+    },
 ];
 
 const App = () => {
