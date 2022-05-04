@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Accordion from "./components/Accordion";
 import Search from "./components/Search";
 import Dropdown from "./components/Dropdown";
+import Translate from "./components/Translate";
 
 const items = [
     {
@@ -33,12 +34,27 @@ const colors = [
     },
 ];
 
+const languages = [
+    {
+        label: 'Afrikaans',
+        value: 'af'
+    },
+    {
+        label: 'Arabic',
+        value: 'ar'
+    },
+    {
+        label: 'Hindi',
+        value: 'hi'
+    },
+];
+
 const App = () => {
     const [selected, setSelected] = useState(colors[0]);
 
     return (
         <div>
-            <Dropdown options={colors} selected={selected} onSelectedChanged={setSelected}/>
+            <Translate languages={languages}/>
         </div>
     );
 }
