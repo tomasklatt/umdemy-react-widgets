@@ -20,6 +20,10 @@ const languages = [
         label: 'Czech',
         value: 'cs'
     },
+    {
+        label: 'English',
+        value: 'en'
+    },
 ];
 
 const Translate =  () => {
